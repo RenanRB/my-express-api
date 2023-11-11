@@ -4,6 +4,7 @@ import taskRoutes from './routes/tasks';
 const app = express();
 const port = process.env.PORT || 3000;
 const cors = require('cors');
+const compression = require('compression');
 
 app.use(express.json()); // Add this line to enable JSON parsing in the request body
 app.use('/tasks', taskRoutes); // Add this line to mount the Task API routes
@@ -11,6 +12,8 @@ app.use('/tasks', taskRoutes); // Add this line to mount the Task API routes
 app.use(cors({
 	origin: 'http://localhost:4200'
 }));
+
+app.use(compression());
 
 // Add this error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
