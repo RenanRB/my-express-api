@@ -19,7 +19,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, TypeScript Express!');
+  res.send('Hello, TypeScript Express and nodemon!');
 });
 
 app.listen(port, () => {
